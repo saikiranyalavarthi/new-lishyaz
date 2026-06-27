@@ -331,7 +331,7 @@ export default function OrderOnline() {
       },
     ],
 
-    "Sandwiches & Toasted Classics": [
+    "Sandwiches": [
       {
         title: "Sandwiches & Toasted Classics",
         items: [
@@ -450,104 +450,113 @@ export default function OrderOnline() {
   }));
 
   return (
-    <div className="min-h-screen bg-gray-100 py-34">
-      {/* Search */}
-
-      <div className="bg-white p-5 shadow">
-        <div className="relative max-w-xl mx-auto">
-          <Search className="absolute left-3 top-3 text-gray-400" size={20} />
-          <input
-            type="text"
-            placeholder="Search Drinks..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full border rounded-xl pl-10 pr-4 py-3 outline-none"
-          />
-        </div>
+  <div className="min-h-screen bg-gray-100 pt-24 pb-10">
+    {/* Search */}
+    <div className="bg-white p-4 shadow-md sticky top-20 z-30">
+      <div className="relative max-w-xl mx-auto">
+        <Search className="absolute left-3 top-3 text-gray-400" size={20} />
+        <input
+          type="text"
+          placeholder="Search Menu..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="w-full border border-gray-300 rounded-xl pl-10 pr-4 py-3 outline-none focus:border-red-600"
+        />
       </div>
+    </div>
 
-      <div className="flex">
-        {/* Sidebar */}
+    <div className="flex flex-col lg:flex-row">
 
-        <div className="w-64 bg-white border-r min-h-screen sticky top-0">
-          <h2 className="text-xl font-bold p-6 border-b">Categories</h2>
+      {/* Sidebar */}
+      <div className="lg:w-72 w-full bg-white border-r lg:sticky lg:top-24 lg:h-[calc(100vh-96px)] overflow-y-auto">
 
-          {[
-            "Hot Drinks",
-            "Iced Drinks",
-            "Breakfasts",
-            "Burger & Wraps",
-            "Sandwiches & Toasted Classics",
-            "Hot Plates",
-            "Pub Favourites",
-            "Bowls & Curries",
+        <h2 className="text-xl font-bold p-5 border-b bg-white sticky top-0 z-20">
+          Categories
+        </h2>
+
+        <div className="flex lg:flex-col overflow-x-auto lg:overflow-x-visible">
+
+          {[ "Hot Drinks", "Iced Drinks", "Breakfasts", "Burger & Wraps", "Sandwiches", "Hot Plates", "Pub Favourites", "Bowls & Curries",
           ].map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`w-full text-left px-6 py-4 transition font-medium ${
+              className={`flex-shrink-0 lg:w-full text-left px-6 py-4 font-medium whitespace-nowrap transition ${
                 activeCategory === cat
                   ? "bg-red-600 text-white"
-                  : "hover:bg-orange-50"
+                  : "hover:bg-red-50"
               }`}
             >
               {cat}
             </button>
           ))}
-        </div>
 
-        {/* Products Section Starts in Part 2 */}
-        {/* Products Section Starts in Part 2 */}
-        <div className="flex-1 p-8">
-          <h1 className="text-3xl font-bold mb-8">{activeCategory}</h1>
-          {filteredSections.map((section, index) => (
-            <div key={index} className="mb-10">
-              {/* Section Title */}
-              <h2 className="text-2xl font-bold text-orange-600 mb-5 border-b pb-2">
-                {section.title}
-              </h2>
-
-              {/* Products */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {section.items.length > 0 ? (
-                  section.items.map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-white rounded-2xl shadow hover:shadow-xl transition-all duration-300 p-6 border"
-                    >
-                      <div className="flex justify-between items-start">
-                        <div className="flex-1">
-                          <h3 className="text-xl font-semibold text-gray-800">
-                            {item.name}
-                          </h3>
-
-                          {item.description && (
-                            <p className="text-gray-500 text-sm mt-2 leading-6">
-                              {item.description}
-                            </p>
-                          )}
-
-                          <p className="text-red-600 font-bold text-lg mt-4">
-                            {item.price}
-                          </p>
-                        </div>
-
-                        <button className="ml-5 px-5 py-2 rounded-xl bg-red-600 hover:bg-orange-600 text-white font-semibold transition">
-                          ADD
-                        </button>
-                      </div>
-                    </div>
-                  ))
-                ) : (
-                  <div className="col-span-2 text-center text-gray-500 py-10">
-                    No drinks found.
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
+
+      {/* Products */}
+      <div className="flex-1 p-5 lg:p-8">
+
+        <h1 className="text-3xl font-bold mb-8">
+          {activeCategory}
+        </h1>
+
+        {filteredSections.map((section, index) => (
+          <div key={index} className="mb-12">
+
+            <h2 className="text-2xl font-bold text-red-600 mb-6 border-b border-red-200 pb-2">
+              {section.title}
+            </h2>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+              {section.items.length > 0 ? (
+                section.items.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 border p-6"
+                  >
+                    <div className="flex justify-between gap-4">
+
+                      <div className="flex-1">
+
+                        <h3 className="text-xl font-bold text-gray-800">
+                          {item.name}
+                        </h3>
+
+                        {item.description && (
+                          <p className="text-gray-500 mt-3 leading-6 text-sm">
+                            {item.description}
+                          </p>
+                        )}
+
+                        <p className="text-red-600 text-xl font-bold mt-5">
+                          {item.price}
+                        </p>
+
+                      </div>
+
+                      <button className="self-center bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-semibold transition">
+                        ADD
+                      </button>
+
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <div className="col-span-2 text-center text-gray-500 py-12">
+                  No items found.
+                </div>
+              )}
+
+            </div>
+
+          </div>
+        ))}
+
+      </div>
+
     </div>
-  );
+  </div>
+)
 }
