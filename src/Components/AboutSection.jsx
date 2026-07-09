@@ -24,11 +24,12 @@
 //     </section>
 //   );
 // }
+
 import { ArrowRight } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 bg-white">
+    <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left */}
@@ -41,15 +42,15 @@ export default function AboutSection() {
             {/* Heading */}
             <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
               Fresh Coffee,
-              <span className="block text-gray-800">Delicious Meals</span>
+              <span className="block text-red-600">Delicious Meals</span>
               <span className="block text-gray-900">& Warm Hospitality</span>
             </h2>
 
             {/* Description */}
             <p className="mt-8 text-gray-600 text-lg leading-8">
-              At <strong className="text-black">Lishayz</strong>, we take pride
-              in serving premium coffee, handcrafted meals, and creating a warm,
-              welcoming atmosphere for every guest.
+              At <strong>Lishayz</strong>, we take pride in serving premium
+              coffee, handcrafted meals, and creating a warm, welcoming
+              atmosphere for every guest.
             </p>
 
             <p className="mt-5 text-gray-600 text-lg leading-8">

@@ -108,12 +108,9 @@
 //  );
 // // }
 
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { HiMenu, HiX } from "react-icons/hi";
-import { HiUser } from "react-icons/hi";
-import { HiShoppingCart } from "react-icons/hi";
+import { HiMenu, HiX, HiUser, HiShoppingCart } from "react-icons/hi";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -128,128 +125,133 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Desktop Button
+  // Desktop Navigation Button
   const desktopBtn =
-    "px-6 py-3 rounded-full bg-white border border-black shadow-[2px_2px_0px_0px_#ef4444] text-[12px] font-extrabold uppercase tracking-wide transition-all duration-300 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#ef4444]";
+    "px-6 py-3 rounded-full border border-white bg-transparent text-white text-[12px] font-bold uppercase tracking-wide shadow-[2px_2px_0px_0px_#dc2626] transition-all duration-300 hover:bg-red-600 hover:border-red-600 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#dc2626]";
 
   // Sign In Button
   const signInBtn =
-    "px-6 py-3 rounded-full bg-red-600 border border-black shadow-[3px_3px_0px_0px_#000] text-white text-[12px] font-extrabold uppercase tracking-wide transition-all duration-300 hover:bg-red-700 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_red]";
-return (
-  <>
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scroll ? "bg-white/90 backdrop-blur-md shadow-md" : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto h-24 px-6 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/">
-          <h1 className="text-4xl md:text-5xl font-black tracking-[2px] uppercase text-red-600">
-            LISHAYZ
-          </h1>
-        </Link>
+    "px-6 py-3 rounded-full bg-red-600 border border-white text-white text-[12px] font-bold uppercase tracking-wide shadow-[3px_3px_0px_0px_#fff] transition-all duration-300 hover:bg-red-700 hover:-translate-y-1 hover:shadow-[5px_5px_0px_0px_#fff]";
 
-        {/* Desktop Menu */}
-        <nav className="hidden lg:flex items-center gap-3">
-          <Link to="/" className={desktopBtn}>
-            Home
-          </Link>
-
-          <Link to="/order-online" className={desktopBtn}>
-            Order Online
-          </Link>
-
-          <Link to="/catering" className={desktopBtn}>
-            Catering
-          </Link>
-
-          <Link to="/food-network" className={desktopBtn}>
-            Food Network
-          </Link>
-
-          <Link
-            to="/signin"
-            className={`${signInBtn} flex items-center gap-2`}
-          >
-            <HiUser size={16} />
-            <span>Sign In</span>
-          </Link>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden w-12 h-12 flex items-center justify-center rounded-full bg-white border border-black shadow-[2px_2px_0px_0px_#000]"
-        >
-          {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-96" : "max-h-0"
+  return (
+    <>
+      {/* Header */}
+      <header
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+          scroll ? "bg-black/95 backdrop-blur-md shadow-lg" : "bg-black"
         }`}
       >
-        <div className="bg-white border-t p-6">
-          <div className="flex flex-col gap-4">
-            <Link
-              to="/"
-              className={desktopBtn}
-              onClick={() => setIsOpen(false)}
+        <div className="max-w-7xl mx-auto h-24 px-6 flex items-center justify-between">
+          {/* Logo */}
+          <Link to="/">
+            <h1
+              className="text-4xl md:text-5xl font-black uppercase tracking-[4px] text-red-600"
+              style={{ fontFamily: "Montserrat, sans-serif" }}
             >
+              LISHAYZ
+            </h1>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-3">
+            <Link to="/" className={desktopBtn}>
               Home
             </Link>
 
-            <Link
-              to="/order-online"
-              className={desktopBtn}
-              onClick={() => setIsOpen(false)}
-            >
+            <Link to="/order-online" className={desktopBtn}>
               Order Online
             </Link>
 
-            <Link
-              to="/catering"
-              className={desktopBtn}
-              onClick={() => setIsOpen(false)}
-            >
+            <Link to="/catering" className={desktopBtn}>
               Catering
             </Link>
 
-            <Link
-              to="/food-network"
-              className={desktopBtn}
-              onClick={() => setIsOpen(false)}
-            >
+            <Link to="/food-network" className={desktopBtn}>
               Food Network
             </Link>
 
             <Link
               to="/signin"
               className={`${signInBtn} flex items-center gap-2`}
-              onClick={() => setIsOpen(false)}
             >
               <HiUser size={16} />
               <span>Sign In</span>
             </Link>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden w-12 h-12 flex items-center justify-center rounded-full bg-red-600 text-white border border-white shadow-[3px_3px_0px_0px_#fff]"
+          >
+            {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`lg:hidden overflow-hidden transition-all duration-300 ${
+            isOpen ? "max-h-96" : "max-h-0"
+          }`}
+        >
+          <div className="bg-black border-t border-gray-800 p-6">
+            <div className="flex flex-col gap-4">
+              <Link
+                to="/"
+                className={desktopBtn}
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </Link>
+
+              <Link
+                to="/order-online"
+                className={desktopBtn}
+                onClick={() => setIsOpen(false)}
+              >
+                Order Online
+              </Link>
+
+              <Link
+                to="/catering"
+                className={desktopBtn}
+                onClick={() => setIsOpen(false)}
+              >
+                Catering
+              </Link>
+
+              <Link
+                to="/food-network"
+                className={desktopBtn}
+                onClick={() => setIsOpen(false)}
+              >
+                Food Network
+              </Link>
+
+              <Link
+                to="/signin"
+                className={`${signInBtn} flex items-center justify-center gap-2`}
+                onClick={() => setIsOpen(false)}
+              >
+                <HiUser size={16} />
+                <span>Sign In</span>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    {/* Floating Sticky Cart */}
-    <Link
-      to="/cart"
-      className="fixed bottom-6 right-6 z-[9999] flex items-center justify-center w-16 h-16 rounded-full bg-red-600 text-white border-2 border-black shadow-[4px_4px_0px_0px_#000] transition-all duration-300 hover:bg-red-700 hover:scale-110"
-    >
-      <HiShoppingCart size={28} />
+      {/* Floating Cart */}
+      <Link
+        to="/cart"
+        className="fixed bottom-6 right-6 z-[9999] flex items-center justify-center w-16 h-16 rounded-full bg-red-600 text-white border-2 border-white shadow-[4px_4px_0px_0px_#fff] transition-all duration-300 hover:bg-red-700 hover:scale-110"
+      >
+        <HiShoppingCart size={28} />
 
-      <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-white text-red-600 text-xs font-bold border border-black flex items-center justify-center">
-        0
-      </span>
-    </Link>
-  </>
-)
+        <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-white text-red-600 text-xs font-bold border border-black flex items-center justify-center">
+          0
+        </span>
+      </Link>
+    </>
+  );
 }
