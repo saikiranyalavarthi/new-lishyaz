@@ -12,10 +12,7 @@ export default function OrderOnlineSection() {
           {/* Left */}
 
           <div>
-            <span className="inline-flex items-center gap-2 bg-white text-red-600 px-5 py-2 rounded-full font-semibold">
-              <ShoppingBag size={18} />
-              Order Online
-            </span>
+           
 
             <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
               Fresh Meals

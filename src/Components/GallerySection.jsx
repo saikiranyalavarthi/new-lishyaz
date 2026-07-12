@@ -16,10 +16,13 @@ export default function VibeSection() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center">
-          <span className="inline-block bg-black text-white px-5 py-2 rounded-full font-semibold">
-            GALLERY
-          </span>
-
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center bg-white border-2 border-black rounded-lg px-5 py-2 shadow-[3px_3px_0px_0px_#dc2626]">
+              <h4 className="text-base md:text-lg font-bold uppercase tracking-wider text-black">
+               Gallery
+              </h4>
+            </div>
+          </div>
           <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-black text-gray-900">
             Experience The
             <span className="block text-gray-700">Lishayz Vibe</span>
@@ -54,7 +57,7 @@ export default function VibeSection() {
             to="/gallery"
             className="inline-flex items-center gap-3 bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:translate-x-1"
           >
-            View Gallery
+            VIEW GALLERY
             <ArrowRight size={20} />
           </Link>
         </div>

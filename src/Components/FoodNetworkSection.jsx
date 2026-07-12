@@ -74,9 +74,14 @@ export default function FoodNetworkSection() {
         {/* Heading */}
 
         <div className="text-center">
-          <span className="inline-block bg-red-600 text-white px-5 py-2 rounded-full font-semibold">
-            Food Network
-          </span>
+          {/* Eyebrow */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center bg-white border-2 border-black rounded-lg px-5 py-2 shadow-[3px_3px_0px_0px_#dc2626]">
+              <h4 className="text-base md:text-lg font-bold uppercase tracking-wider text-black">
+                Food Network
+              </h4>
+            </div>
+          </div>
 
           <h2 className="mt-6 text-4xl md:text-5xl font-black text-gray-900">
             Fresh Food Solutions
@@ -113,14 +118,13 @@ export default function FoodNetworkSection() {
         {/* Button */}
 
         <div className="flex justify-center mt-16">
-      
-         <Link
-  to="/food-network"
-  className="inline-flex bg-red-600 hover:bg-red-700 duration-300 text-white px-10 py-4 rounded-xl font-semibold items-center gap-3"
->
-  EXPLORE
-  <ArrowRight size={20} />
-</Link>
+          <Link
+            to="/food-network"
+            className="inline-flex bg-red-600 hover:bg-red-700 duration-300 text-white px-10 py-4 rounded-xl font-semibold items-center gap-3"
+          >
+            EXPLORE
+            <ArrowRight size={20} />
+          </Link>
         </div>
       </div>
     </section>

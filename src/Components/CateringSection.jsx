@@ -11,9 +11,13 @@ export default function CateringSection() {
           {/* Left Content */}
 
           <div>
-            <span className="inline-block bg-red-600 text-white px-5 py-2 rounded-full font-semibold">
-              Catering
-            </span>
+           <div className="text-center mb-8">
+  <div className="inline-flex items-center justify-center bg-white border-2 border-black rounded-lg px-5 py-2 shadow-[3px_3px_0px_0px_#dc2626]">
+    <h4 className="text-base md:text-lg font-bold uppercase tracking-wider text-black">
+catering
+    </h4>
+  </div>
+</div>
 
             <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
               Fresh Catering

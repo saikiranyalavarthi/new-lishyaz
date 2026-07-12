@@ -456,7 +456,7 @@ return (
 
             <Link to="/order-online">
               <button className="w-full sm:w-auto border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white transition px-8 py-3 rounded-xl font-semibold cursor-pointer">
-                Explore Full Menu
+                 EXPLORE FULL MENU
               </button>
             </Link>
 

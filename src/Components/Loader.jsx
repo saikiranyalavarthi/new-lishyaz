@@ -14,7 +14,7 @@ export default function Loader() {
   if (!loading) return null;
 
   return (
-    <div className="fixed inset-0 bg-black flex items-center justify-center z-[9999]">
+    <div className="fixed inset-0 bg-white flex items-center justify-center z-[9999]">
       <h1
         className="text-6xl font-black tracking-[0.3em] animate-pulse text-red-600"
         style={{ fontFamily: "'Montserrat', sans-serif" }}
