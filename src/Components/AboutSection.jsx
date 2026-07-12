@@ -45,7 +45,7 @@ export default function AboutSection() {
             {/* Heading */}
             <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
               Fresh Coffee,
-              <span className="block text-red-600">Delicious Meals</span>
+              <span className="block text-gray-900">Delicious Meals</span>
               <span className="block text-gray-900">& Warm Hospitality</span>
             </h2>
 
