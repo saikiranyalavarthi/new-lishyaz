@@ -35,13 +35,13 @@ export default function AboutSection() {
           {/* Left */}
           <div>
             {/* Eyebrow */}
-          <div className="text-center mb-8">
-  <div className="inline-flex items-center justify-center bg-white border-2 border-black rounded-lg px-5 py-2 shadow-[3px_3px_0px_0px_#dc2626]">
-    <h4 className="text-base md:text-lg font-bold uppercase tracking-wider text-black">
-      About Lishayz
-    </h4>
-  </div>
-</div>
+            <div className="mb-8 flex justify-start">
+              <div className="inline-flex items-center bg-white border-2 border-black rounded-xl px-6 py-3 shadow-[4px_4px_0px_0px_#dc2626]">
+                <h4 className="text-sm md:text-base font-extrabold uppercase tracking-[2px] text-black">
+                  About Lishayz
+                </h4>
+              </div>
+            </div>
             {/* Heading */}
             <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
               Fresh Coffee,
@@ -69,7 +69,7 @@ export default function AboutSection() {
 
             {/* Button */}
             <button className="mt-10 bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-xl flex items-center gap-3 transition-all duration-300 hover:translate-x-1">
-            LEARN MORE
+              LEARN MORE
               <ArrowRight size={20} />
             </button>
           </div>
