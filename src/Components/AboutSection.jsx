@@ -68,10 +68,7 @@ export default function AboutSection() {
             </p>
 
             {/* Button */}
-            <button className="mt-10 bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-xl flex items-center gap-3 transition-all duration-300 hover:translate-x-1">
-              LEARN MORE
-              <ArrowRight size={20} />
-            </button>
+          
           </div>
 
           {/* Right */}

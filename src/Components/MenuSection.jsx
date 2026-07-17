@@ -372,7 +372,6 @@ export default function MenuSection() {
             </div>
           </div>
 
-
           {/* Products */}
           <div className="lg:col-span-4">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
@@ -394,7 +393,7 @@ export default function MenuSection() {
             </div>
 
             {/* Show ALL Products */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
               {products.map((item) => (
                 <div
                   key={item.id}
@@ -405,31 +404,30 @@ export default function MenuSection() {
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-full h-60 object-cover group-hover:scale-110 duration-500"
+                      className="w-full h-40 lg:h-60 object-cover group-hover:scale-110 duration-500"
                     />
 
-                    <span className="absolute top-4 left-4 bg-green-600 text-white text-xs px-3 py-1 rounded-full">
+                    <span className="absolute top-2 left-2 lg:top-4 lg:left-4 bg-green-600 text-white text-[10px] lg:text-xs px-2 lg:px-3 py-1 rounded-full">
                       Bestseller
                     </span>
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 flex flex-col flex-1">
-                    <h3 className="text-xl font-bold min-h-[60px]">
+                  <div className="p-3 lg:p-6 flex flex-col flex-1">
+                    <h3 className="text-sm lg:text-xl font-bold min-h-[40px] lg:min-h-[60px]">
                       {item.name}
                     </h3>
 
-                    <p className="text-gray-500 mt-3 text-sm leading-6 flex-1">
+                    <p className="text-gray-500 mt-2 lg:mt-3 text-xs lg:text-sm leading-5 lg:leading-6 flex-1">
                       {item.desc}
                     </p>
-
                     {/* Bottom */}
                     <div className="mt-6 flex items-center justify-between">
-                      <h4 className="text-red-600 text-2xl font-bold">
+                      <h4 className="text-red-600 text-lg lg:text-2xl font-bold">
                         {item.price}
                       </h4>
 
-                      <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-semibold transition">
+                      <button className="bg-red-600 hover:bg-red-700 text-white px-3 lg:px-6 py-2 lg:py-3 rounded-xl font-semibold transition text-xs lg:text-base">
                         ADD
                       </button>
                     </div>

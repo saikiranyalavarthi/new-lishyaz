@@ -127,7 +127,7 @@ export default function Navbar() {
 
   // Desktop Navigation Button
   const desktopBtn =
-    "px-6 py-3 rounded-full border border-white bg-transparent text-white text-[12px] font-bold uppercase tracking-wide shadow-[2px_2px_0px_0px_#dc2626] transition-all duration-300 hover:bg-red-600 hover:border-red-600 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#dc2626]";
+    "px-6 py-3 rounded-full border border-white bg-transparent text-white text-[12px] font-bold uppercase tracking-wide  transition-all duration-300 hover:bg-red-600 hover:border-red-600 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_#dc2626]";
 
   // Sign In Button
   const signInBtn =
@@ -145,7 +145,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/">
             <h1
-              className="text-4xl md:text-5xl font-black uppercase tracking-[4px] text-red-600"
+              className="text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-[2px] sm:tracking-[3px] md:tracking-[4px] text-red-600"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
               LISHAYZ
