@@ -40,6 +40,7 @@ import Loader from "./Components/Loader";
 import Home from "./Pages/Home";
 import OrderOnline from "./Pages/OrderOnline";
 import Foodnetwork from "./Pages/Foodnetwork.jsx";
+import ScrollToTop from "./Components/ScrollToTop.jsx";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -51,7 +52,7 @@ function App() {
       ) : (
         <>
           <Navbar />
-
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/order-online" element={<OrderOnline />} />
