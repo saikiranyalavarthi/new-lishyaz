@@ -12,8 +12,8 @@ import { Link } from "react-router-dom";
 export default function MenuSection() {
   const [activeCategory, setActiveCategory] = useState("Hot Drinks");
   const [showSizeModal, setShowSizeModal] = useState(false);
-const [selectedItem, setSelectedItem] = useState(null);
-const [selectedSize, setSelectedSize] = useState("Medium");
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedSizes, setSelectedSizes] = useState({});
 
   const categories = [
     {
@@ -57,12 +57,12 @@ const [selectedSize, setSelectedSize] = useState("Medium");
           "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600",
         name: "Latte",
         desc: "Fresh espresso with silky steamed milk.",
-price: "$5.50",
-sizes: {
-  Small: "$5.00",
-  Medium: "$5.50",
-  Large: "$6.00",
-},
+        price: "$5.50",
+        sizes: {
+          Small: "$5.00",
+          Medium: "$5.50",
+          Large: "$6.00",
+        },
       },
       {
         id: 2,
@@ -70,12 +70,12 @@ sizes: {
           "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600",
         name: "Cappuccino",
         desc: "Espresso with creamy milk foam.",
-       price: "$5.50",
-sizes: {
-  Small: "$5.00",
-  Medium: "$5.50",
-  Large: "$6.00",
-},
+        price: "$5.50",
+        sizes: {
+          Small: "$5.00",
+          Medium: "$5.50",
+          Large: "$6.00",
+        },
       },
       {
         id: 3,
@@ -83,12 +83,12 @@ sizes: {
           "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=600",
         name: "Mocha",
         desc: "Chocolate coffee with steamed milk.",
-       price: "$5.50",
-sizes: {
-  Small: "$5.00",
-  Medium: "$5.50",
-  Large: "$6.00",
-},
+        price: "$5.50",
+        sizes: {
+          Small: "$5.00",
+          Medium: "$5.50",
+          Large: "$6.00",
+        },
       },
       {
         id: 4,
@@ -97,25 +97,25 @@ sizes: {
         name: "Flat White",
         desc: "Smooth espresso coffee.",
         price: "$5.50",
-sizes: {
-  Small: "$5.00",
-  Medium: "$5.50",
-  Large: "$6.00",
-},
+        sizes: {
+          Small: "$5.00",
+          Medium: "$5.50",
+          Large: "$6.00",
+        },
       },
-      {
-        id: 5,
-        image:
-          "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600",
-        name: "Long Black",
-        desc: "Double espresso with hot water.",
-     price: "$5.50",
-sizes: {
-  Small: "$5.00",
-  Medium: "$5.50",
-  Large: "$6.00",
-},
-      },
+      // //       {
+      // //         id: 5,
+      // //         image:
+      // //           "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600",
+      // //         name: "Long Black",
+      // //         desc: "Double espresso with hot water.",
+      // //      price: "$5.50",
+      // // sizes: {
+      // //   Small: "$5.00",
+      // //   Medium: "$5.50",
+      // //   Large: "$6.00",
+      // // },
+      //       },
     ],
     "Iced Drinks": [
       {
@@ -124,12 +124,12 @@ sizes: {
           "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=600",
         name: "Iced Latte",
         desc: "Smooth espresso served over ice with chilled milk.",
-     price: "$5.50",
-sizes: {
-  Small: "$5.00",
-  Medium: "$5.50",
-  Large: "$6.00",
-},
+        price: "$5.50",
+        sizes: {
+          Small: "$5.00",
+          Medium: "$5.50",
+          Large: "$6.00",
+        },
       },
       {
         id: 2,
@@ -137,12 +137,12 @@ sizes: {
           "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600",
         name: "Iced Mocha",
         desc: "Rich chocolate, espresso and chilled milk over ice.",
-      price: "$5.50",
-sizes: {
-  Small: "$5.00",
-  Medium: "$5.50",
-  Large: "$6.00",
-},
+        price: "$5.50",
+        sizes: {
+          Small: "$5.00",
+          Medium: "$5.50",
+          Large: "$6.00",
+        },
       },
       {
         id: 3,
@@ -150,12 +150,12 @@ sizes: {
           "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600",
         name: "Iced Matcha Latte",
         desc: "Premium Japanese matcha blended with cold milk.",
-      price: "$5.50",
-sizes: {
-  Small: "$5.00",
-  Medium: "$5.50",
-  Large: "$6.00",
-},
+        price: "$5.50",
+        sizes: {
+          Small: "$5.00",
+          Medium: "$5.50",
+          Large: "$6.00",
+        },
       },
       {
         id: 4,
@@ -163,12 +163,12 @@ sizes: {
           "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600",
         name: "Iced Strawberry Matcha",
         desc: "Refreshing strawberry puree layered with matcha and milk.",
-     price: "$5.50",
-sizes: {
-  Small: "$5.00",
-  Medium: "$5.50",
-  Large: "$6.00",
-},
+        price: "$5.50",
+        sizes: {
+          Small: "$5.00",
+          Medium: "$5.50",
+          Large: "$6.00",
+        },
       },
     ],
     Breakfasts: [
@@ -258,7 +258,6 @@ sizes: {
         desc: "BBQ pork riblets served with crispy chips and fresh salad.",
         price: "$13.50",
       },
-      
     ],
 
     "Bowls&Curries": [
@@ -296,7 +295,7 @@ sizes: {
       },
     ],
 
-    "PubFavourites": [
+    PubFavourites: [
       {
         id: 1,
         image:
@@ -454,31 +453,64 @@ sizes: {
                     <p className="text-gray-500 mt-2 lg:mt-3 text-xs lg:text-sm leading-5 lg:leading-6 flex-1">
                       {item.desc}
                     </p>
+              
                     {/* Bottom */}
-                    <div className="mt-6 flex items-center justify-between">
-                      <h4 className="text-red-600 text-lg lg:text-2xl font-bold">
-                        {item.price}
-                      </h4>
+<div className="mt-6">
 
-                      <button
-  onClick={() => {
-    if (
-      activeCategory === "Hot Drinks" ||
-      activeCategory === "Iced Drinks"
-    ) {
-      setSelectedItem(item);
-      setSelectedSize("Medium");
-      setShowSizeModal(true);
-    } else {
-      addToCart(item);
-    }
-  }}
-  className="bg-red-600 hover:bg-red-700 text-white px-3 lg:px-6 py-2 lg:py-3 rounded-xl font-semibold transition text-xs lg:text-base"
->
-  ADD
-</button>
-                    </div>
-                  </div>
+  {(activeCategory === "Hot Drinks" ||
+    activeCategory === "Iced Drinks") &&
+  item.sizes ? (
+    <>
+      {/* S M L Row */}
+      <div className="flex justify-center gap-2 mb-3">
+        {Object.entries(item.sizes).map(([size, price]) => (
+          <button
+            key={size}
+        onClick={() =>
+  setSelectedSizes((prev) => ({
+    ...prev,
+    [item.id]: size,
+  }))
+}
+            className={`px-2 py-1 rounded-full border text-xs transition ${
+         (selectedSizes[item.id] || "Medium") === size
+                ? "bg-red-600 text-white border-red-600"
+                : "border-gray-400 hover:border-red-600 hover:text-red-600"
+            }`}
+          >
+            {size.charAt(0)} {price}
+          </button>
+        ))}
+      </div>
+
+      {/* ADD Button */}
+      <button
+        onClick={() => {
+          setSelectedItem(item);
+          setShowSizeModal(true);
+        }}
+        className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-semibold"
+      >
+        ADD
+      </button>
+    </>
+  ) : (
+    <div className="flex items-center justify-between">
+      <h4 className="text-red-600 text-lg lg:text-2xl font-bold">
+        {item.price}
+      </h4>
+
+      <button
+        onClick={() => addToCart(item)}
+        className="bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-xl font-semibold"
+      >
+        ADD
+      </button>
+    </div>
+  )}
+
+</div>
+</div>
                 </div>
               ))}
             </div>
