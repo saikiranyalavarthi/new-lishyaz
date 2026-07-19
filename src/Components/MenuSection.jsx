@@ -11,6 +11,9 @@ import { Link } from "react-router-dom";
 
 export default function MenuSection() {
   const [activeCategory, setActiveCategory] = useState("Hot Drinks");
+  const [showSizeModal, setShowSizeModal] = useState(false);
+const [selectedItem, setSelectedItem] = useState(null);
+const [selectedSize, setSelectedSize] = useState("Medium");
 
   const categories = [
     {
@@ -54,7 +57,12 @@ export default function MenuSection() {
           "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600",
         name: "Latte",
         desc: "Fresh espresso with silky steamed milk.",
-        price: "$5.50",
+price: "$5.50",
+sizes: {
+  Small: "$5.00",
+  Medium: "$5.50",
+  Large: "$6.00",
+},
       },
       {
         id: 2,
@@ -62,7 +70,12 @@ export default function MenuSection() {
           "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600",
         name: "Cappuccino",
         desc: "Espresso with creamy milk foam.",
-        price: "$5.50",
+       price: "$5.50",
+sizes: {
+  Small: "$5.00",
+  Medium: "$5.50",
+  Large: "$6.00",
+},
       },
       {
         id: 3,
@@ -70,7 +83,12 @@ export default function MenuSection() {
           "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=600",
         name: "Mocha",
         desc: "Chocolate coffee with steamed milk.",
-        price: "$6.30",
+       price: "$5.50",
+sizes: {
+  Small: "$5.00",
+  Medium: "$5.50",
+  Large: "$6.00",
+},
       },
       {
         id: 4,
@@ -79,6 +97,11 @@ export default function MenuSection() {
         name: "Flat White",
         desc: "Smooth espresso coffee.",
         price: "$5.50",
+sizes: {
+  Small: "$5.00",
+  Medium: "$5.50",
+  Large: "$6.00",
+},
       },
       {
         id: 5,
@@ -86,7 +109,12 @@ export default function MenuSection() {
           "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600",
         name: "Long Black",
         desc: "Double espresso with hot water.",
-        price: "$5.00",
+     price: "$5.50",
+sizes: {
+  Small: "$5.00",
+  Medium: "$5.50",
+  Large: "$6.00",
+},
       },
     ],
     "Iced Drinks": [
@@ -96,7 +124,12 @@ export default function MenuSection() {
           "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=600",
         name: "Iced Latte",
         desc: "Smooth espresso served over ice with chilled milk.",
-        price: "$6.50",
+     price: "$5.50",
+sizes: {
+  Small: "$5.00",
+  Medium: "$5.50",
+  Large: "$6.00",
+},
       },
       {
         id: 2,
@@ -104,7 +137,12 @@ export default function MenuSection() {
           "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600",
         name: "Iced Mocha",
         desc: "Rich chocolate, espresso and chilled milk over ice.",
-        price: "$7.00",
+      price: "$5.50",
+sizes: {
+  Small: "$5.00",
+  Medium: "$5.50",
+  Large: "$6.00",
+},
       },
       {
         id: 3,
@@ -112,7 +150,12 @@ export default function MenuSection() {
           "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600",
         name: "Iced Matcha Latte",
         desc: "Premium Japanese matcha blended with cold milk.",
-        price: "$7.50",
+      price: "$5.50",
+sizes: {
+  Small: "$5.00",
+  Medium: "$5.50",
+  Large: "$6.00",
+},
       },
       {
         id: 4,
@@ -120,7 +163,12 @@ export default function MenuSection() {
           "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600",
         name: "Iced Strawberry Matcha",
         desc: "Refreshing strawberry puree layered with matcha and milk.",
-        price: "$9.50",
+     price: "$5.50",
+sizes: {
+  Small: "$5.00",
+  Medium: "$5.50",
+  Large: "$6.00",
+},
       },
     ],
     Breakfasts: [
@@ -210,25 +258,10 @@ export default function MenuSection() {
         desc: "BBQ pork riblets served with crispy chips and fresh salad.",
         price: "$13.50",
       },
-      {
-        id: 3,
-        image:
-          "https://images.unsplash.com/photo-1544025162-d76694265947?w=600",
-        name: "Classic Lasagna",
-        desc: "Rich layers of meat, tomato sauce and melted cheese served hot.",
-        price: "$15.50",
-      },
-      {
-        id: 4,
-        image:
-          "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600",
-        name: "BBQ Mixed Plate",
-        desc: "Grilled BBQ meat served with chips, salad and house-made sauce.",
-        price: "$16.90",
-      },
+      
     ],
 
-    "Bowls & Curries": [
+    "Bowls&Curries": [
       {
         id: 1,
         image:
@@ -240,7 +273,7 @@ export default function MenuSection() {
       {
         id: 2,
         image:
-          "https://images.unsplash.com/photo-1604908177522-4027c1f2f3d4?w=600",
+          "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600",
         name: "Butter Chicken",
         desc: "Tender grilled chicken simmered in rich creamy butter chicken curry served with rice.",
         price: "$17.50",
@@ -263,7 +296,7 @@ export default function MenuSection() {
       },
     ],
 
-    "Pub Favourites": [
+    "PubFavourites": [
       {
         id: 1,
         image:
@@ -298,7 +331,7 @@ export default function MenuSection() {
       },
     ],
 
-    "Burger & Wraps": [
+    "Burger&Wraps": [
       {
         id: 1,
         image:
@@ -427,9 +460,23 @@ export default function MenuSection() {
                         {item.price}
                       </h4>
 
-                      <button className="bg-red-600 hover:bg-red-700 text-white px-3 lg:px-6 py-2 lg:py-3 rounded-xl font-semibold transition text-xs lg:text-base">
-                        ADD
-                      </button>
+                      <button
+  onClick={() => {
+    if (
+      activeCategory === "Hot Drinks" ||
+      activeCategory === "Iced Drinks"
+    ) {
+      setSelectedItem(item);
+      setSelectedSize("Medium");
+      setShowSizeModal(true);
+    } else {
+      addToCart(item);
+    }
+  }}
+  className="bg-red-600 hover:bg-red-700 text-white px-3 lg:px-6 py-2 lg:py-3 rounded-xl font-semibold transition text-xs lg:text-base"
+>
+  ADD
+</button>
                     </div>
                   </div>
                 </div>

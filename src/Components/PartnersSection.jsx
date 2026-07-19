@@ -2,11 +2,16 @@ export default function PartnersSection() {
   const partners = [
     "/imges1.jpg",
     "/imges2.jpg",
+    "/imges3.jpg",
     "/imges4.jpg",
     "/imges5.jpg",
     "/imges6.jpg",
     "/imges7.jpg",
     "/imges8.jpg",
+    "/imges9.jpg",
+
+    
+
   ];
 
   return (

@@ -57,7 +57,7 @@ export default function LocationSection() {
               <div>
                 <h3 className="text-xl font-bold">Phone</h3>
 
-                <p className="text-gray-600 mt-2">+61 75532 9893</p>
+                <p className="text-gray-600 mt-2">0755329893</p>
               </div>
             </div>
 
@@ -69,7 +69,7 @@ export default function LocationSection() {
               <div>
                 <h3 className="text-xl font-bold">Email</h3>
 
-                <p className="text-gray-600 mt-2">info@lishayz.com</p>
+                <p className="text-gray-600 mt-2">cafelishayz@gmail.com</p>
               </div>
             </div>
 

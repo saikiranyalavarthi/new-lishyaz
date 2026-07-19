@@ -61,7 +61,7 @@ export default function Footer() {
               </li>
 
               <li>
-                <a href="/sitemap">Sitemap</a>
+                <a href="/sitemap">Careers</a>
               </li>
             </ul>
           </div>
@@ -83,13 +83,23 @@ export default function Footer() {
               </div>
 
               <div className="flex gap-3">
-                <FaPhoneAlt className="text-red-500" />
-                <a href="tel:+61755329893">+61 7 5532 9893</a>
+                <FaPhoneAlt className="text-red-500 mt-1" />
+                <a
+                  href="tel:0755329893"
+                  className="hover:text-red-500 transition-colors"
+                >
+                  0755329893
+                </a>
               </div>
 
               <div className="flex gap-3">
-                <FaEnvelope className="text-red-500" />
-                <a href="mailto:info@lishayz.com">info@lishayz.com</a>
+                <FaEnvelope className="text-red-500 mt-1" />
+                <a
+                  href="mailto:cafelishayz@gmail.com"
+                  className="hover:text-red-500 transition-colors"
+                >
+                  cafelishayz@gmail.com
+                </a>
               </div>
             </div>
           </div>

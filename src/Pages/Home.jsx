@@ -19,7 +19,7 @@ function Home() {
       <MenuSection />
       <CateringSection />
       <FoodNetworkSection />
-      <OrderOnlineSection/>
+      {/* <OrderOnlineSection/> */}
       <PartnersSection />
       <GallerySection />
 <LocationSection/>
